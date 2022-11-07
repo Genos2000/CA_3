@@ -1,7 +1,7 @@
-all: data/input_16.in data/input_4096.in data/input_8192.in data/input_16384.in cmm
+all: data/input_16.in data/input_4096.in data/input_8192.in data/input_16384.in rmm
 
-cmm: main.cpp header/single_thread.h header/multi_thread.h
-	g++ main.cpp -o cmm -I ./header -lpthread -mavx -mavx2
+rmm: main.cpp header/single_thread.h header/multi_thread.h
+	g++ -g -ggdb main.cpp -o rmm -I ./header -lpthread -mavx -mavx2
 
 data/generate: data/generate.cpp
 	g++ ./data/generate.cpp -o ./data/generate
@@ -18,11 +18,11 @@ data/input_8192.in: data/generate
 data/input_16384.in: data/generate
 	./data/generate 16384 
 
-run: data/input_16.in data/input_4096.in data/input_8192.in data/input_16384.in cmm
-	./cmm data/input_16.in
-	./cmm data/input_4096.in
-	./cmm data/input_8192.in
-	./cmm data/input_16384.in
+run: data/input_16.in data/input_4096.in data/input_8192.in data/input_16384.in rmm
+	./rmm data/input_16.in
+	./rmm data/input_4096.in
+	./rmm data/input_8192.in
+	./rmm data/input_16384.in
 
 clean:
-	rm cmm
+	rm rmm

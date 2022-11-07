@@ -1,5 +1,5 @@
 # HPCA Assignment
-Optimize checkered matrix multiplication using hardware counters.
+Optimize reducing matrix multiplication using hardware counters.
 Contained are two folders:
 * PartA: Contains setup for single-threaded and multi-threaded program.
 * PartB: Contains setup for GPU program.
@@ -25,9 +25,9 @@ make run
 ```
 Alternatively, you can manually run the program for the different input sets using the following commands:
 ```
-./cmm data/input_4096.in
-./cmm data/input_8192.in
-./cmm data/input_16384.in
+./rmm data/input_4096.in
+./rmm data/input_8192.in
+./rmm data/input_16384.in
 ```
 
 ## PART B
