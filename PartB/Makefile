@@ -20,5 +20,12 @@ run_sim: data/input_128.in cmm_sim
 run_server: data/input_128.in cmm_server
 	./cmm_server data/input_128.in
 
+gpu:data/input_2048.in cmm_server
+	./cmm_server data/input_1024.in
+	./cmm_server data/input_2048.in
+	./cmm_server data/input_4096.in
+	./cmm_server data/input_8192.in
+	./cmm_server data/input_16834.in
+
 clean:
 	rm -f cmm_sim cmm_server
